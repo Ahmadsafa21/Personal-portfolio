@@ -3,17 +3,24 @@ import { Link } from 'react-router-dom';
 import './index.scss';
 import { useEffect, useState } from 'react';
 import AnimatedLetters from '../AnimatedLetters';
+import Logo from './Logo'
 
 const Home = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
     const nameArray = ['a', 'f', 'a']
     const jobArray = ['s', 'o', 'f', 't', 'w', 'a', 'r', 'e', ' ', 'e', 'n', 'g', 'i', 'n', 'e', 'e', 'r',]
 
+  
     useEffect(() => {
-        return setTimeout(() => {
-            setLetterClass('text-animate-hover')
-        }, 4000)
-    }, [])
+        // Create a variable to hold the timeout
+        const timer = setTimeout(() => {
+            setLetterClass('text-animate-hover');
+        }, 4000);
+    
+        // Cleanup function to clear the timeout if the component unmounts
+        return () => clearTimeout(timer);
+    }, []);
+    
 
     return (
         < div className="container home-page" >
@@ -35,6 +42,7 @@ const Home = () => {
                 <h2> Computer Science Major / AI enthusiast</h2>
                 <Link to="/contact" className='flat-button'>CONTACT ME</Link>
             </div>
+            <Logo />
         </div >
     )
 
