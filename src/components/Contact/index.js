@@ -14,12 +14,12 @@ const Contact = () => {
   useEffect(() => {
     // Create a variable to hold the timeout
     const timer = setTimeout(() => {
-        setLetterClass('text-animate-hover');
+      setLetterClass('text-animate-hover');
     }, 3000);
 
     // Cleanup function to clear the timeout if the component unmounts
     return () => clearTimeout(timer);
-}, []);
+  }, []);
 
   const sendEmail = (e) => {
     e.preventDefault()
@@ -90,19 +90,19 @@ const Contact = () => {
         <div className="info-map">
           Ahmed Safa,
           <br />
-          Portland, Oregon <br/>
+          Portland, Oregon <br />
           <span>safaahmad380@gmail.com</span>
         </div>
         <div className="map-wrap">
-          <MapContainer center={[45.5140,-122.6804]} zoom={13}>
+          <MapContainer center={[45.5140, -122.6804]} zoom={13}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={[45.5140,-122.6804]}>
+            <Marker position={[45.5140, -122.6804]}>
               <Popup>This is a random location, it's not my home address. Or is it?</Popup>
             </Marker>
           </MapContainer>
         </div>
       </div>
-      <Loader type="pacman" />
+      <Loader type="ball-clip-rotate-multiple" />
     </>
   )
 }

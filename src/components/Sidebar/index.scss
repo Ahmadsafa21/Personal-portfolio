@@ -50,7 +50,7 @@
             }
 
             &:hover {
-                color: #ffd700;
+                color: #7DF9FF;
 
                 svg {
                     opacity: 0;
@@ -93,9 +93,15 @@
             }
         }
 
+        a.skills-link {
+            &:after {
+                content: 'SKILLS';
+            }
+        }
+
         a.active {
             svg {
-                color: #ffd700;
+                color: #7DF9FF;
             }
         }
     }
@@ -119,7 +125,7 @@
                 line-height: 16px;
 
                 &:hover svg {
-                    color: #ffd700;
+                    color: #7DF9FF;
                 }
             }
         }
