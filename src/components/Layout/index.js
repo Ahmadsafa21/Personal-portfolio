@@ -7,13 +7,18 @@ const Layout = () => {
     <div className="App">
       <Sidebar />
       <div className="page">
-        <span className="tags top-tags">&lt;body&gt;</span>
+        {/* Visual representation of opening HTML and body tags */}
+        <span className="tags top-tags">
+          &lt;html&gt;<br />&lt;body&gt;
+        </span>
 
+        {/* Your main content outlet */}
         <Outlet />
+
+        {/* Visual representation of closing body and HTML tags */}
         <span className="tags bottom-tags">
-          &lt;/body&gt;
-          <br />
-          <span className="bottom-tag-html">&lt;/html&gt;</span>
+           &lt;/body&gt;<br />
+          &lt;/html&gt;
         </span>
       </div>
     </div>

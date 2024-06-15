@@ -1,0 +1,56 @@
+.resume-container {
+  display: flex;      // Enable flexbox
+  align-items: center; // Align items vertically in the center
+  justify-content: center; // Center items horizontally
+  width: 100%;        // Full width of the parent
+  max-width: 1200px;  // Maximum width of the container
+  margin: 20px auto;  // Center the container and add margin
+}
+
+.resume-text {
+  width: 200px;       // Fixed width for the text box
+  margin-right: 20px; // Space between the text box and the image
+  font-size: 22px;    // Font size for the text
+  padding: 10px;      // Padding around the text
+  text-align: center; // Center the text horizontally
+  font-family: sans-serif;
+  box-shadow: 10px 15px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+  margin-left: 10px;
+  color: white;
+
+
+}
+
+.resume-container img {
+  flex-grow: 1;       // Allow the image to fill the rest of the space
+  height: auto;       // Auto height to maintain aspect ratio
+  max-height: 100vh;  // Maximum height of the viewport
+}
+@media (max-width: 768px) {
+  .resume-container {
+    flex-direction:column-reverse; // Stack elements vertically on small screens
+    margin-top: 100px;
+    max-width: 100%;
+    margin-left: 53px;
+    width: 85%;
+  }
+
+  .resume-text {
+    width: 50%;       // Allow the text box to take full width
+    margin-right: 0;   // Remove margin on the right
+    margin-bottom: 20px; // Add margin below for spacing
+    font-family: sans-serif;
+    box-shadow: 10px 15px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+    margin-left: 10px;
+    color: white;
+    max-width: 100%;
+    margin-top: 20px;
+    
+    
+
+  }
+
+  .resume-container img {
+    width: 50%;
+  }
+}

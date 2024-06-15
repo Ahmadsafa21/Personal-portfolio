@@ -98,12 +98,18 @@
                 content: 'SKILLS';
             }
         }
+        a.resume-link{
+            &:after {
+                content: 'RESUME';
+            }
+        }
 
         a.active {
             svg {
                 color: #7DF9FF;
             }
         }
+        
     }
 
 

@@ -1,3 +1,44 @@
+.about-page {
+  display: flex; // Ensures that the .about-page itself is a flex container
+  justify-content: center; // Centers the .text-zone horizontally
+  align-items: center; // Centers the .text-zone vertically
+  min-height: 100vh; // Makes sure the .about-page takes at least the full height of the viewport
+
+  .text-zone {
+    width: 90%; // Limits the width to 90% to ensure padding from the screen edge
+    max-width: 800px; // Keeps the max-width for larger screens
+    margin: 20px auto; // Adds margin on the top and bottom to ensure spacing around the text-zone
+    padding: 20px; // Consistent padding
+    box-shadow: 10px 15px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+    margin-left: 10px;
+
+    p {
+      font-size: 22px; // Readable font size for the body text
+      line-height: 1.6; // Line height for better readability
+      margin-top: 0; // Removes top margin
+      margin-bottom: 20px; // Space below the paragraph
+    }
+
+    // Responsive media query for mobile devices
+    @media (max-width: 768px) {
+      width: calc(100% - 60px); // Increases the width to ensure padding from the navigation menu
+      padding: 15px; // Adjusts padding for mobile
+      box-shadow: 5px 7px rgba(0, 0, 0, 0.1); // Adjusts the shadow to be less intense
+      margin: 0 auto; // Ensures centering on mobile
+      display: block; // Change to block to avoid flex issues on mobile
+      margin-left: 70px; // Adds padding to the left to avoid overlap with navigation
+
+      p {
+        font-size: 18px; // Adjusts the font size to be smaller on mobile for better readability
+        line-height: 1.4; // Slightly reduced line height for better mobile fit
+      }
+    }
+  }
+}
+
+
+
+
 .stage-cube-cont {
   width: 50%;
   height: 100%;
@@ -7,6 +48,13 @@
   position: absolute;
   right: 0;
   overflow: hidden;
+  @media (max-width: 768px) {
+    top: 80%; // Remove top positioning
+    bottom: 0; // Position at the bottom
+    padding-top: 0; // Remove top padding
+    padding-bottom: 18%; // Add bottom padding to maintain aspect ratio
+    width: 80%; // Full width for mobile
+  }
 }
 
 .cubespinner {
@@ -31,37 +79,92 @@
     align-items: center;
     box-shadow: 0 0 20px 0px lightyellow;
   }
-
-  .face1 {
-    transform: translateZ(100px);
-    color: #dd0031;
+    .face1, .face2, .face3, .face4, .face5, .face6 {
+      // These transform properties will be adjusted in the media query below
+    }
+    @media (max-width: 768px) {
+      transform-origin: 50px 50px 0;
+      margin-left: calc(50% - 50px);
+      margin-top: 30px;
+  
+      div {
+        width: 100px;
+        height: 100px;
+        font-size: 50px;
+      }
+  
+      .face1 {
+        transform: translateZ(50px);
+        color: #dd0031;
+      }
+  
+      .face2 {
+        transform: rotateY(90deg) translateZ(50px);
+        color: #f06529;
+      }
+  
+      .face3 {
+        transform: rotateY(90deg) rotateX(90deg) translateZ(50px);
+        color: #28a4d9;
+      }
+  
+      .face4 {
+        transform: rotateY(180deg) rotateZ(90deg) translateZ(50px);
+        color: #5ed4f4;
+      }
+  
+      .face5 {
+        transform: rotateY(-90deg) rotateZ(90deg) translateZ(50px);
+        color: #efd81d;
+      }
+  
+      .face6 {
+        transform: rotateX(-90deg) translateZ(50px);
+        color: #ec4d28;
+      }
+    }
+  
+    @media (min-width: 769px) {
+      transform-origin: 100px 100px 0;
+      margin-left: calc(50% - 100px);
+  
+      div {
+        width: 200px;
+        height: 200px;
+        font-size: 100px;
+      }
+  
+      .face1 {
+        transform: translateZ(100px);
+        color: #dd0031;
+      }
+  
+      .face2 {
+        transform: rotateY(90deg) translateZ(100px);
+        color: #f06529;
+      }
+  
+      .face3 {
+        transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+        color: #28a4d9;
+      }
+  
+      .face4 {
+        transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+        color: #5ed4f4;
+      }
+  
+      .face5 {
+        transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+        color: #efd81d;
+      }
+  
+      .face6 {
+        transform: rotateX(-90deg) translateZ(100px);
+        color: #ec4d28;
+      }
+    }
   }
-
-  .face2 {
-    transform: rotateY(90deg) translateZ(100px);
-    color: #f06529;
-  }
-
-  .face3 {
-    transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
-    color: #28a4d9;
-  }
-
-  .face4 {
-    transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
-    color: #5ed4f4;
-  }
-
-  .face5 {
-    transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
-    color: #efd81d;
-  }
-
-  .face6 {
-    transform: rotateX(-90deg) translateZ(100px);
-    color: #ec4d28;
-  }
-}
 
 @keyframes spincube {
 
@@ -90,3 +193,4 @@
     transform: rotateX(90deg);
   }
 }
+

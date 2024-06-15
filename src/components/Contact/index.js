@@ -49,7 +49,7 @@ const Contact = () => {
             />
           </h1>
           <p>
-            I am interested in any software engineering roles, especially AI or machine learning related work. Please don't hesitate to contact me if there is anything you would like to discuss!
+            I am currently interested in any software engineering roles, I'm eager to learn and hopefully contribute to real-world projects. Please don't hesitate to contact me if there is anything you would like to discuss!
           </p>
           <div className="contact-form">
             <form ref={form} onSubmit={sendEmail}>
@@ -97,7 +97,7 @@ const Contact = () => {
           <MapContainer center={[45.5140, -122.6804]} zoom={13}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <Marker position={[45.5140, -122.6804]}>
-              <Popup>This is a random location, it's not my home address. Or is it?</Popup>
+              
             </Marker>
           </MapContainer>
         </div>

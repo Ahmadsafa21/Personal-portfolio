@@ -26,7 +26,7 @@ const Skills = () => {
         // Cleanup function to clear the timeout if the component unmounts
         return () => clearTimeout(timer);
     }, []);
-
+    //using container about-page design, so refer to About/index.scss for design about below code
     return (
         <>
             <div className="container about-page">

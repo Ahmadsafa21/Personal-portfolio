@@ -1,42 +1,49 @@
+// Variables for reusable properties
+$primary-color: #7DF9FF;
+$secondary-color: #333;
+$font-coolvetica: 'Coolvetica', sans-serif;
+$font-aurore: 'La Belle Aurore', cursive;
+$breakpoint-mobile: 480px;
+
+// Mixin for common animations
+@mixin animation-fadeIn($delay) {
+    animation: fadeIn 1s $delay backwards;
+}
+
 .home-page {
-    .text-zone {
-        position: absolute;
-        left: 10%;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40%;
-        max-height: 90%;
+    display: flex;
+    justify-content: center; // Center horizontally
+    align-items: center; // Center vertically
+    height: 100vh; // Take full viewport height
+    margin: 0;
+    padding: 0;
+    font-size: 36px; // Default for mobile
+    margin-left: 30px;
+
+    @media (min-width: $breakpoint-mobile) {
+        font-size: 53px; // Larger screens
     }
+
+    .text-zone {
+        position: relative; // Changed from absolute for better Flexbox handling
+        width: 80%; // Adjust width as necessary
+        max-width: 600px;
+        text-align: center; // Ensure text inside is centered
+
+        @media (max-width: $breakpoint-mobile) {
+            width: 90%; // Make it a bit wider on smaller screens if needed
+        }
+    }
+
 
     h1 {
         color: #fff;
-        font-size: 53px;
+        font-size: inherit; // Use font size from parent container
         margin: 0;
-        font-family: 'Coolvetica';
+        font-family: $font-coolvetica;
         font-weight: 400;
 
-        &::before {
-            content: '<h1>';
-            font-family: 'La Belle Aurore';
-            color: #7DF9FF;
-            font-size: 18px;
-            position: absolute;
-            margin-top: -40px;
-            left: 15px;
-            opacity: 0.6;
-        }
 
-        &::after {
-            content: '<h1/>';
-            font-family: 'La Belle Aurore';
-            color: #7DF9FF;
-            font-size: 18px;
-            position: absolute;
-            margin-top: 18px;
-            margin-left: 20px;
-            animation: fadeIn 1s 1.7s backwards;
-            opacity: 0.6;
-        }
 
         img {
             width: 32px;
@@ -46,7 +53,6 @@
             animation: rotateIn 1s linear both;
             animation-delay: 1.4s;
         }
-
     }
 
     h2 {
@@ -56,26 +62,44 @@
         font-size: 11px;
         font-family: sans-serif;
         letter-spacing: 2px;
-        animation: fadeIn 1s 1.8s backwards;
+        @include animation-fadeIn(1.8s);
     }
 
     .flat-button {
-        color: #7DF9FF;
-        font-size: 13px;
+        color: $primary-color;
+        font-size: 18px;
         font-weight: 400;
-        letter-spacing: 4px;
+        letter-spacing: 3px;
         font-family: sans-serif;
         text-decoration: none;
         padding: 10px 18px;
-        border: 1px solid #7DF9FF;
+        border: 1px solid $primary-color;
         margin-top: 25px;
-        float: left;
-        animation: fadeIn 1s 1.8s backwards;
         white-space: nowrap;
+        display: flex;
+        justify-content: center; // Center horizontally
+        align-items: center; // Center vertically
+        
+        @include animation-fadeIn(1.8s);
 
         &:hover {
-            background: #7DF9FF;
-            color: #333;
+            background: $primary-color;
+            color: $secondary-color;
+        }
+    
+        @media (max-width: $breakpoint-mobile) {
+            font-size: 16px; // Slightly larger for better readability and easier tapping
+            padding: 12px 20px; // Larger padding for a bigger tap target
+            margin-top: 20px; // Adjust margin as needed
+            float: none; // Remove float for mobile
+            display: flex; // Block display to take the full width
+            width: 65%; // Adjust width as necessary
+            margin-left: 50px; // Center the button horizontally
+            margin-right: auto; // Center the button horizontally
+            @include animation-fadeIn(1.8s);
+            justify-content: center; // Center horizontally
+            align-items: center; // Center vertically
         }
     }
+    
 }

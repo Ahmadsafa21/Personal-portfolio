@@ -1,3 +1,42 @@
+.contact-page{
+  .text-zone {
+    width: 90%; // Limits the width to 90% to ensure padding from the screen edge
+    max-width: 800px; // Keeps the max-width for larger screens
+    margin: 20px auto; // Adds margin on the top and bottom to ensure spacing around the text-zone
+    padding: 20px; // Consistent padding
+    box-shadow: 10px 15px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+    margin-left: 10px;
+
+    p {
+      font-size: 22px; // Readable font size for the body text
+      line-height: 1.6; // Line height for better readability
+      margin-top: 0; // Removes top margin
+      margin-bottom: 20px; // Space below the paragraph
+      
+    }
+    @media (max-width: 768px) {
+      width: calc(100% - 60px); // Increases the width to ensure padding from the navigation menu
+      padding: 15px; // Adjusts padding for mobile
+      box-shadow: 5px 7px rgba(0, 0, 0, 0.1); // Adjusts the shadow to be less intense
+      margin: 0 auto; // Ensures centering on mobile
+      display: block; // Change to block to avoid flex issues on mobile
+      margin-left: 50px; // Adds padding to the left to avoid overlap with navigation
+      h1{
+        margin-top: 90px;
+
+        margin-left: 20px; // Adds padding to the left to avoid overlap with navigation
+
+
+      }
+
+      p {
+        font-size: 18px; // Adjusts the font size to be smaller on mobile for better readability
+        line-height: 1.4; // Slightly reduced line height for better mobile fit
+        width: 90%;
+      }
+    }
+  }
+}
 .contact-form {
   width: 100%;
   margin-top: 20px;
@@ -30,6 +69,15 @@
         margin-left: 0;
       }
     }
+  }
+  
+  @media (max-width: 768px) {
+    width: calc(100% - 60px); // Increases the width to ensure padding from the navigation menu
+    padding: 15px; // Adjusts padding for mobile
+    box-shadow: 5px 7px rgba(0, 0, 0, 0.1); // Adjusts the shadow to be less intense
+    margin: 0 auto; // Ensures centering on mobile
+    display: block; // Change to block to avoid flex issues on mobile
+    margin-left:0; // Adds padding to the left to avoid overlap with navigation
   }
 
   input[type='text'],
@@ -121,6 +169,8 @@
     margin: 0;
     width: 100%;
     height: 400px;
+    margin-left: 60px;
+
   }
 
   .info-map {
