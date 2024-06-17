@@ -1,4 +1,3 @@
-// Variables for reusable properties
 $primary-color: #7DF9FF;
 $secondary-color: #333;
 $font-coolvetica: 'Coolvetica', sans-serif;
@@ -35,15 +34,12 @@ $breakpoint-mobile: 480px;
         }
     }
 
-
     h1 {
         color: #fff;
         font-size: inherit; // Use font size from parent container
         margin: 0;
         font-family: $font-coolvetica;
         font-weight: 400;
-
-
 
         img {
             width: 32px;
@@ -76,30 +72,31 @@ $breakpoint-mobile: 480px;
         border: 1px solid $primary-color;
         margin-top: 25px;
         white-space: nowrap;
-        display: flex;
+        display: inline-flex; // Use inline-flex for better alignment
         justify-content: center; // Center horizontally
         align-items: center; // Center vertically
-        
+        position: relative; // Add position relative
+
         @include animation-fadeIn(1.8s);
 
         &:hover {
             background: $primary-color;
             color: $secondary-color;
         }
-    
+
         @media (max-width: $breakpoint-mobile) {
             font-size: 16px; // Slightly larger for better readability and easier tapping
             padding: 12px 20px; // Larger padding for a bigger tap target
             margin-top: 20px; // Adjust margin as needed
-            float: none; // Remove float for mobile
             display: flex; // Block display to take the full width
-            width: 65%; // Adjust width as necessary
-            margin-left: 50px; // Center the button horizontally
+            max-width: 70%; // Set a maximum width
+            margin-left: auto; // Center the button horizontally
             margin-right: auto; // Center the button horizontally
+            z-index: 10; // Ensure the button is on top
+
             @include animation-fadeIn(1.8s);
             justify-content: center; // Center horizontally
             align-items: center; // Center vertically
         }
     }
-    
 }
