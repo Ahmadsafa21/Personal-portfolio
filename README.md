@@ -8,6 +8,6 @@ after that, run
 
 npm run deploy (will deploy and push changes to github)
 
-to run locally
+and to run locally execute the command below in the react-portfolio folder
 
 npm start

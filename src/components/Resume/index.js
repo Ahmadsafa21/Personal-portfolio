@@ -9,8 +9,12 @@ return(
   <>
   <div className="resume-container">
     <div className="resume-text">
-      Resume as of: June 2024
+    Resume as of {" "}
+    <span >
+      {`${new Date().toLocaleString("default", { month: "long" })} ${new Date().getFullYear()}`}
+    </span>
     </div>
+
     <img
       src={resumeImage}
       alt="Resume"
